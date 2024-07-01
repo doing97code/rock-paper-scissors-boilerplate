@@ -4,7 +4,6 @@ html {
     padding: 0;
     width: 100%;
     height: 100%;
-    /* overflow: hidden; */
 }
 
 .text {
@@ -152,7 +151,7 @@ html {
     margin-top: 60px;
     font-size: 50px;
     margin-top: 40px;
-    visibility: hidden;
+    
     
 }
 
@@ -161,4 +160,13 @@ button{
     font-size: 20px;
     border: 2px solid goldenrod;
     margin-bottom: 50px;
+}
+#num1,#num2{
+    color:white;
+}
+.number1{
+    color: white;
+}
+#spanans{
+    color: white;
 }

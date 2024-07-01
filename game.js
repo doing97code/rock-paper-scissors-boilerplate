@@ -5,14 +5,34 @@ const mainleftpic = document.getElementById("mainleftpic");
 const rightmainpic = document.getElementById("rightmainpic");
 const num1 = document.getElementById("num1");
 const num2 = document.getElementById("num2");
+const spanans = document.getElementById("spanans");
 
 let total = 0;
 let comptotal = 0;
+let gameEnded = false; // Flag to track if the game has ended
 
 // Function to handle game logic for player's choice
 function playGame(playerChoice, playerImgSrc) {
+    if (gameEnded) return; // Exit early if game has ended
+    
     mainleftpic.src = playerImgSrc;
     const computerChoice = comp();
+
+    if (total >= 5) {
+        spanans.innerHTML = "You won the game";
+        gameEnded = true; // Set game ended flag
+    } else if (comptotal >= 5) {
+        spanans.innerHTML = "Computer won this game";
+        gameEnded = true; // Set game ended flag
+    }
+
+    // Disable buttons if game has ended
+    if (gameEnded) {
+        paper.disabled = true;
+        rock.disabled = true;
+        scissor.disabled = true;
+        return;
+    }
     
     if (playerChoice === computerChoice) {
         // setTimeout(() => {
@@ -56,4 +76,7 @@ function comp() {
     return computerChoice;
 }
 
-
+const play = document.getElementById("play");
+play.onclick = function () {
+    window.location.href = "game.html";
+}
