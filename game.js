@@ -69,14 +69,17 @@ scissor.onclick = function () {
 // Function to randomly select computer's choice
 const arr = ["paper", "rock", "scissors"];
 
-function comp() {
-    const randomIndex = Math.floor(Math.random() * arr.length);
-    const computerChoice = arr[randomIndex];
-    rightmainpic.src = `./assets/${computerChoice}-hand.png`;
-    return computerChoice;
-}
+
 
 const play = document.getElementById("play");
 play.onclick = function () {
     window.location.href = "game.html";
+}
+
+function comp() {
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    const computerChoice = arr[randomIndex];
+    // give id there and access and user src method 
+    rightmainpic.src = `./assets/${computerChoice}-hand.png`;
+    return computerChoice;
 }
